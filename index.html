@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my project php</title>
+    <style>
+        label{
+            display: block;
+        }
+        input{
+            border: 3px black solid;
+        }
+    </style>
+</head>
+<body>
+    <form action="./assets/php/main.php" method="post">
+        <div>
+            <label>package name</label>
+            <input type="text" name="package_name">
+            <label>package description</label>
+            <input type="text" name="package_description">
+            <label>created at</label>
+            <input type="date" name="created_at">
+            <label>updated at</label>
+            <input type="date" name="updated_at">
+            <input type="submit" name="submit" value="submit">
+        </div>
+    </form>
+</body>
+</html>
