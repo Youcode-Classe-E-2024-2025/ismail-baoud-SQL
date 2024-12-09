@@ -1,14 +1,15 @@
 <?php 
+
 require('connection.php');
 $query = null;
 $result = null;
-$query = "SELECT id, package_name,package_description,created_at,updated_at,author_id  FROM packages";
+$query = "SELECT id,name,email  FROM authors";
 $result = $conn->query($query);
 
 $conn->close();
 
 ?>
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -20,12 +21,8 @@ $conn->close();
     while($row = $result->fetch_assoc()){
         echo 
             "<tr><td>" . $row["id"] . "</td>
-                <td>" . $row["package_name"] . "</td>
-                <td>" . $row["package_description"] . "</td>
-                <td>" . $row["created_at"] . "</td>
-                <td>" . $row["updated_at"] . "</td> 
-                <td>" . $row["author_id"] . "</td> 
-
+                <td>" . $row["name"] . "</td>
+                <td>" . $row["email"] . "</td>
             </tr>";
     }
         ?>
