@@ -9,9 +9,10 @@ $conn = mysqli_connect($server_name, $user_name, $password, $database_name);
 if (!$conn) {
     echo "Connection failed: ";
 }
+
 $query = null;
 $result = null;
-$query = "SELECT id, package_name, package_description, created_at, updated_at, author_id FROM packages";
+$query = "SELECT id, package_name, package_description, updated_at, author_id FROM packages";
 $result = $conn->query($query);
 
 $conn->close();
@@ -27,7 +28,7 @@ $conn->close();
 
 </head>
 <body>
-
+<?php include "add_all_data.php" ?>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">PACKAGES PRO</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -59,14 +60,17 @@ $conn->close();
     <?php include "../../connection.php" ?>
 <div class="container">
         <h4 class="center-align">author informations</h4>
-        <form method="post">
+        <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
             <div class="input-field">
                 <label for="name">Full Name</label>
                 <input type="text" name="auteur" class="validate" placeholder="Enter your name">
+                <span class="text-danger"><?php echo $nameerr; ?></span>
             </div>
             <div class="input-field">
                 <label for="email">Email Address</label>
                 <input type="email" name="auteur_email"  class="validate" placeholder="Enter your email">
+                <span class="text-danger"><?php echo $emailerr; ?></span>
+
             </div>
             <input type="submit" name="add_author" value="submit" class="btn">
         </form>
@@ -77,22 +81,23 @@ $conn->close();
             <div class="input-field">
                 <label for="packageName">Package Name</label>
                 <input type="text" id="packageName" name="package_name" class="validate" placeholder="Enter package name">
+                <span class="text-danger"><?php echo $package_nameerr; ?></span>
             </div>
             <div class="input-field">
                 <label for="packageDescription">Package Description</label>
                 <input type="text" id="packageDescription" name="package_description" class="validate" placeholder="Enter package description">
-            </div>
-            <div class="input-field">
-                <label for="createdAt">Created At</label>
-                <input type="date" id="createdAt" class="validate" name="created_at" placeholder="Enter creation date">
+                <span class="text-danger"><?php echo $package_descriptionerr; ?></span>
+
             </div>
             <div class="input-field">
                 <label for="updatedAt">Updated At</label>
                 <input type="date" id="updatedAt" class="validate" name="updated_at" placeholder="Enter update date">
+                <span class="text-danger"><?php echo $updated_aterr; ?></span>
             </div>
             <div class="input-field">
                 <label for="updatedAt">author name</label>
                 <input type="text" id="updatedAt" name="author_name" class="validate" placeholder="Enter update date">
+                <span class="text-danger"><?php echo $name_authorerr; ?></span>
             </div>
             
             <input type="submit" name="submit" value="submit" class="btn">
@@ -105,7 +110,7 @@ $conn->close();
             <a href="#" class="text-white">Terms of Service</a>
         </p>
     </footer>
-    <?php include "add_data.php" ?>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     
 </body>

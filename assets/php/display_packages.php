@@ -12,18 +12,18 @@ if (!$conn) {
 
 if(isset($_POST["btn_spr"])) {
     $id_supremer = $_POST['id'];
-$query1 = "DELETE FROM packages WHERE $id_supremer = id";
-$result1 = $conn->query($query1);
-if($result1){
-    echo "deleted with success...";
-}else{
-    echo "error in delete";
-}
+    $query1 = "DELETE FROM packages WHERE $id_supremer = id";
+    $result1 = $conn->query($query1);
+    if($result1){
+        echo "deleted with success...";
+    }else{
+        echo "error in delete";
+    }
 
 }
 $query = null;
 $result = null;
-$query = "SELECT id, package_name, package_description, created_at, updated_at, author_id FROM packages";
+$query = "SELECT id, package_name, package_description, updated_at, author_id FROM packages";
 $result = $conn->query($query);
 
 
@@ -38,7 +38,6 @@ $conn->close();
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
-
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">PACKAGES PRO</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -74,7 +73,6 @@ $conn->close();
                 <th scope="col">id</th>
                 <th scope="col">package name</th>
                 <th scope="col">package description</th>
-                <th scope="col">created at</th>
                 <th scope="col">updated at</th>
                 <th scope="col">author id</th>
                 <th scope="col">supremer</th>
@@ -87,7 +85,6 @@ $conn->close();
                     "<tr><th scope='row'>" . $row["id"] . "</th>
                         <td>" . $row["package_name"] . "</td>
                         <td>" . $row["package_description"] . "</td>
-                        <td>" . $row["created_at"] . "</td>
                         <td>" . $row["updated_at"] . "</td> 
                         <td>" . $row["author_id"] . "</td>
                          <td>
