@@ -30,28 +30,35 @@ $conn->close();
     </style>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">PACKAGES PRO</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav ms-auto">
-      <li class="nav-item active">
-        <a class="nav-link me-6" href="./../../index.php">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="./display_data.php">All Packages</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="./add_data_auteur.php">All Authors</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="./les_jounteurs.php">Package / Author</a>
-      </li>
-    </ul>
-  </div>
-</nav>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+        <a class="navbar-brand" href="#">PACKAGES PRO</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item active">
+                    <a class="nav-link bg-secondary btn me-3" href="../../index.php">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link bg-secondary btn me-3" href="display_packages.php">All Packages</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link bg-secondary btn me-3" href="display_authors.php">All Authors</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link bg-secondary btn me-3" href="display_relations.php">Package / Author</a>
+                </li>
+          
+                <li class="nav-item">
+                    <a class="nav-link bg-success btn" href="add_form.php"> Add package / author</a>
+                </li>
+            
+            </ul>
+        </div>
+    </nav>
+    <?php include "../../connection.php" ?>
     <table class="table table-striped text-center ">
 
     <tr>
@@ -70,7 +77,7 @@ $conn->close();
     ?>
     </table>
     <footer class="bg-dark text-white text-center py-3 mt-5">
-        <p>&copy; 2024 Your Company. All Rights Reserved.</p>
+        <p>&copy; 2024 Package pro. All Rights Reserved.</p>
         <p>
             <a href="#" class="text-white">Privacy Policy</a> |
             <a href="#" class="text-white">Terms of Service</a>

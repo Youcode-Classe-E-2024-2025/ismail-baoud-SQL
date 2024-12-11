@@ -48,20 +48,20 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item active">
-                    <a class="nav-link me-6" href="#">Home</a>
+                    <a class="nav-link bg-secondary btn me-3" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./assets/php/display_data.php">All Packages</a>
+                    <a class="nav-link bg-secondary btn me-3" href="./assets/php/display_packages.php">All Packages</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./assets/php/add_data_auteur.php">All Authors</a>
+                    <a class="nav-link bg-secondary btn me-3" href="./assets/php/display_authors.php">All Authors</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./assets/php/les_jounteurs.php">Package / Author</a>
+                    <a class="nav-link bg-secondary btn me-3" href="./assets/php/display_relations.php">Package / Author</a>
                 </li>
           
                 <li class="nav-item">
-                    <a class="nav-link bg-success" href="./assets/php/user_page.php"> Add new package / author</a>
+                    <a class="nav-link btn bg-success" href="./assets/php/add_form.php"> Add package / author</a>
                 </li>
             
             </ul>
@@ -88,12 +88,13 @@
     </div>
 
 <div class="card mb-3 mt-5">
-  <img class="card-img-top" src="./assets/images/Data-Thinking-1.avif" alt="Card image cap">
   <div class="card-body">
     <h5 class="card-title">Suivi des auteurs et de leurs contributions</h5>
     <p class="card-text">Le projet vise à centraliser la gestion des packages JavaScript au sein d’une plateforme unique et intuitive. Actuellement, les informations sur les packages sont dispersées.</p>
     <p class="card-text"><small class="text-muted">Last updated 3 days ago</small></p>
   </div>
+  <img class="card-img-top" src="./assets/images/Data-Thinking-1.avif" alt="Card image cap">
+
 </div>
 <div class="card" mt-5>
   <div class="card-body">
@@ -105,7 +106,7 @@
 </div>
 
 <footer class="bg-dark text-white text-center py-3 mt-5">
-        <p>&copy; 2024 Your Company. All Rights Reserved.</p>
+        <p>&copy; 2024 Package Pro. All Rights Reserved.</p>
         <p>
             <a href="#" class="text-white">Privacy Policy</a> |
             <a href="#" class="text-white">Terms of Service</a>
