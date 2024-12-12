@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style>
-        /* Set the background color of the form to green */
+
         .popup-form {
             background-color: green;
             color: white;
@@ -19,7 +18,7 @@
             color: black;
         }
 
-        /* Optional: Set custom styles for input fields and button */
+ 
         .popup-form input,
         .popup-form select,
         .popup-form button {
@@ -32,9 +31,25 @@
 
         .popup-form button {
             background-color: #28a745;
-            /* Green button */
             color: black;
         }
+        <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+        }
+
+        .d-flex {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        footer {
+            margin-top: auto;
+        }
+    </style>
     </style>
 </head>
 
@@ -57,18 +72,25 @@
                     <a class="nav-link bg-secondary btn me-3" href="./assets/php/display_authors.php">All Authors</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link bg-secondary btn me-3" href="./assets/php/display_relations.php">Package / Author</a>
+                    <a class="nav-link bg-secondary btn me-3" href="./assets/php/display_relations.php">Package /
+                        Author</a>
                 </li>
-          
+                <li class="nav-item">
+                    <a class="nav-link bg-secondary btn me-3" href="./assets/php/display_relation_versions.php">packages/versions</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link bg-secondary btn me-3" href="./assets/php/display_versions.php">versions</a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link btn bg-success" href="./assets/php/add_form.php"> Add package / author</a>
                 </li>
-            
+
+
             </ul>
         </div>
     </nav>
     <?php include "connection.php" ?>
-    
+
     <div class="row mt-5 ">
         <div class="card mx-auto" style="width: 18rem;">
             <img class="card-img-top" src="./assets/images/1_iG1rHUl0C48LzRtfyVOXNg.jpg" alt="Card image cap">
@@ -83,29 +105,31 @@
                 désorganisés, laissant les informations sur les packages éparpillées et difficiles à retrouver. Notre
                 application web vise à centraliser la gestion des packages et des auteurs, simplifiant ainsi le
                 processus pour améliorer la productivité et réduire les confusions. En créant un outil unifié, nous
-                souhaitons rendre l’expérience de gestion des packages fluide, organisée et intuitive.</p>
+                souhaitons rendre l'expérience de gestion des packages fluide, organisée et intuitive.</p>
         </div>
     </div>
 
-<div class="card mb-3 mt-5">
-  <div class="card-body">
-    <h5 class="card-title">Suivi des auteurs et de leurs contributions</h5>
-    <p class="card-text">Le projet vise à centraliser la gestion des packages JavaScript au sein d’une plateforme unique et intuitive. Actuellement, les informations sur les packages sont dispersées.</p>
-    <p class="card-text"><small class="text-muted">Last updated 3 days ago</small></p>
-  </div>
-  <img class="card-img-top" src="./assets/images/Data-Thinking-1.avif" alt="Card image cap">
+    <div class="card mb-3 mt-5">
+        <div class="card-body">
+            <h5 class="card-title">Suivi des auteurs et de leurs contributions</h5>
+            <p class="card-text">Le projet vise à centraliser la gestion des packages JavaScript au sein d'une
+                plateforme unique et intuitive. Actuellement, les informations sur les packages sont dispersées.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 days ago</small></p>
+        </div>
+        <img class="card-img-top" src="./assets/images/Data-Thinking-1.avif" alt="Card image cap">
 
-</div>
-<div class="card" mt-5>
-  <div class="card-body">
-    <h5 class="card-title">Facilité de recherche et de filtrage</h5>
-    <p class="card-text">L'application offrira une fonctionnalité de recherche puissante permettant aux utilisateurs de trouver facilement des packages en fonction de l'auteur ou de mots-clés.</p>
-    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-  </div>
-  <img class="card-img-bottom" src="./assets/images/image1.jpg" alt="Card image cap">
-</div>
+    </div>
+    <div class="card" mt-5>
+        <div class="card-body">
+            <h5 class="card-title">Facilité de recherche et de filtrage</h5>
+            <p class="card-text">L'application offrira une fonctionnalité de recherche puissante permettant aux
+                utilisateurs de trouver facilement des packages en fonction de l'auteur ou de mots-clés.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+        <img class="card-img-bottom" src="./assets/images/image1.jpg" alt="Card image cap">
+    </div>
 
-<footer class="bg-dark text-white text-center py-3 mt-5">
+    <footer class="bg-dark text-white text-center py-3 mt-5">
         <p>&copy; 2024 Package Pro. All Rights Reserved.</p>
         <p>
             <a href="#" class="text-white">Privacy Policy</a> |

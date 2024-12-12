@@ -7,24 +7,12 @@ $database_name = "gestion_des_packages";
 $conn = mysqli_connect($server_name, $user_name, $password, $database_name);
 
 if (!$conn) {
-    echo "Connection failed: ";
+    echo "connection failed: ";
 }
-
-if (isset($_POST["btn_spr"])) {
-    $id_supremer = $_POST['id'];
-    $query1 = "DELETE FROM packages WHERE $id_supremer = id";
-    $result1 = $conn->query( $query1);
-    if ($result1) {
-        echo "deleted with success...";
-    } else {
-        echo "error in delete";
-    }
-
-}
-$query = null;
-$result = null;
-$query = "SELECT id, package_name, package_description, created_at, author_id FROM packages";
+$query = "SELECT packages.package_name , versions.version FROM versions INNER JOIN packages ON  versions.package_id = packages.id";
 $result = $conn->query($query);
+
+
 
 
 $conn->close();
@@ -55,10 +43,10 @@ $conn->close();
             margin-top: auto;
         }
     </style>
-    </head>
+</head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
         <a class="navbar-brand" href="#">PACKAGES PRO</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -85,49 +73,35 @@ $conn->close();
                     <a class="nav-link bg-secondary btn me-3" href="display_versions.php">versions</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link  bg-success btn" href="add_form.php"> Add package / author</a>
+                    <a class="nav-link bg-success btn" href="add_form.php"> Add package / author</a>
                 </li>
 
             </ul>
         </div>
     </nav>
     <?php include "../../connection.php" ?>
-    <table class="table table-striped  text-center">
-        <thead class=" text-white">
-            <tr>
-                <th scope="col">id</th>
-                <th scope="col">package name</th>
-                <th scope="col">package description</th>
-                <th scope="col">updated at</th>
-                <th scope="col">author id</th>
-                <th scope="col">supremer</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-            while ($row = $result->fetch_assoc()) {
-                echo
-                    "<tr><th scope='row'>" . $row["id"] . "</th>
-                        <td>" . $row["package_name"] . "</td>
-                        <td>" . $row["package_description"] . "</td>
-                        <td>" . $row["created_at"] . "</td> 
-                        <td>" . $row["author_id"] . "</td>
-                         <td>
-                <form method='post'>
-                    <input type='hidden' name='id' value='" . $row["id"] . "'>
-                    <button type='submit' name='btn_spr' class='btn my-2 bg-danger'>supremer</button>
-                </form>
-            </td>
-                    </tr>";
+    <table class="table table-striped text-center ">
 
-            }
-            ?>
-        </tbody>
+        <tr>
+            <th scope="col">package name</th>
+            <th scope="col">version</th>
+        </tr>
+        <?php
+
+        while ($row = $result->fetch_assoc()) {
+            echo
+                "<tr>
+            <td>" . $row["package_name"] . "</td>
+            <td>" . $row["version"] . "</td>
+            
+        </tr>";
+        }
+        ?>
     </table>
     <footer class="bg-dark text-white text-center py-3 mt-5">
         <p>&copy; 2024 Package pro. All Rights Reserved.</p>
         <p>
-            <a href="#" class="text-white">Privacy Policy</a>
+            <a href="#" class="text-white">Privacy Policy</a> |
             <a href="#" class="text-white">Terms of Service</a>
         </p>
     </footer>
