@@ -1,15 +1,8 @@
 <?php
-$server_name = "localhost";
-$user_name = "root";
-$password = "";
-$database_name = "gestion_des_packages";
 
-$conn = mysqli_connect($server_name, $user_name, $password, $database_name);
+require "../../config/connection_db.php";
 
-if (!$conn) {
-    echo "connection failed: ";
-}
-$query = "SELECT packages.package_name , versions.version FROM versions INNER JOIN packages ON  versions.package_id = packages.id";
+$query = "SELECT packages.package_name , versions.version,versions.creation_date FROM versions INNER JOIN packages ON  versions.package_id = packages.id";
 $result = $conn->query($query);
 
 
@@ -45,11 +38,14 @@ $conn->close();
         footer {
             margin-top: auto;
         }
+        #navbar{
+            box-shadow: 0px 1px 10px 1px black;
+        }
     </style>
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg bg-white sticky-top">
+<nav id="navbar" class="navbar navbar-expand-lg bg-white sticky-top">
         <a class="navbar-brand" href="#">PACKAGES PRO</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -66,16 +62,19 @@ $conn->close();
                 <li class="nav-item">
                     <a class="nav-link p-0 me-3" href="#">packages - versions</a>
                 </li>
-
+                <li class="nav-item">
+                    <a class="nav-link p-0 me-3" href="../../../index.php">log out</a>
+                </li>
             </ul>
         </div>
     </nav>
     <?php include "../../config/connection.php" ?>
-    <table class="table table-striped text-center ">
+    <table class="table table-striped text-center " style="height:80vh;">
 
         <tr>
             <th scope="col">package name</th>
             <th scope="col">version</th>
+            <th scope="col">date of version</th>
         </tr>
         <?php
 
@@ -84,7 +83,7 @@ $conn->close();
                 "<tr>
             <td>" . $row["package_name"] . "</td>
             <td>" . $row["version"] . "</td>
-            
+            <td>" . $row["creation_date"] . "</td>
         </tr>";
         }
         ?>

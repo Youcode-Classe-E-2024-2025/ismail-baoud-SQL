@@ -1,15 +1,6 @@
 <?php
 
-$server_name = "localhost";
-$user_name = "root";
-$password = "";
-$database_name = "gestion_des_packages";
-
-$conn = mysqli_connect($server_name, $user_name, $password, $database_name);
-
-if (!$conn) {
-    echo "connection failed: ";
-}
+require "../config/connection_db.php";
 
 if (isset($_POST["btn_spr"])) {
     $id_supremer = $_POST['id'];
@@ -55,11 +46,14 @@ $conn->close();
         footer {
             margin-top: auto;
         }
+        #navbar{
+            box-shadow: 0px 1px 10px 1px black;
+        }
     </style>
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg bg-white sticky-top">
+<nav id="navbar" class="navbar navbar-expand-lg bg-white sticky-top">
         <a class="navbar-brand" href="#">PACKAGES PRO</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -88,12 +82,14 @@ $conn->close();
                 <li class="nav-item w-auto">
                     <a class="nav-link p-0 me-3 " href="add_form.php"> Add package - author</a>
                 </li>
-
+                <li class="nav-item">
+                    <a class="nav-link p-0 me-3" href="../../index.php">log out</a>
+                </li>
             </ul>
         </div>
     </nav>
     <?php include "../config/connection.php" ?>
-    <section class="d-flex">
+    <section class="d-flex" style="height:80vh;">
         <div class="flex-grow-1">
             <table class="table table-striped text-center">
                 <thead class="text-center">

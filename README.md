@@ -82,18 +82,48 @@ package-management-system/
 
 #### Étapes d'Installation
 
-### Using XAMPP or Laragon
+### Using XAMPP
 1. Clonez le repository
    ```bash
    git clone https://github.com/Youcode-Classe-E-2024-2025/ismail-baoud-package
    ```
-2. Configure your local web server (XAMPP or Laragon) to point to the `index.php` fichie of your project.
+. Placez le dossier du projet dans le répertoire `htdocs` de XAMPP.
 
-3. Create a new database and import the SQL schema located in the `database` directory.
+3. Lancez le panneau de configuration XAMPP et démarrez les modules Apache et MySQL.
 
-4. Update the database connection details in the `src/config/database.php` file.
+4. Rendez-vous dans votre navigateur web et accédez à l'URL `http://localhost/MYPROJECTPHP/index.php`.
 
-5. Start your local web server and navigate to the project URL in your web browser.
+### Using XAMPP
+
+2. Placez le dossier du projet dans le répertoire `www` de Laragon.
+
+3. Lancez Laragon et cliquez sur "Start All" pour démarrer le serveur web et la base de données.
+
+4. Rendez-vous dans votre navigateur web et accédez à l'URL `http://mon-projet-php.test`.
+
+## Configuration
+1. Créez une nouvelle base de données pour le projet.
+
+2. Importez le schéma SQL situé dans le dossier `database` de votre projet.
+
+3. Ouvrez le fichier `src/config/connection_db.php` et mettez à jour les paramètres de connexion à la base de données avec vos propres identifiants.
+
+## Démarrage
+Une fois l'installation et la configuration terminées, vous pouvez démarrer le serveur web local et accéder à l'application.
+
+1. Depuis XAMPP, cliquez sur le bouton "Start" pour le module Apache.
+2. Depuis Laragon, cliquez sur "Start All" pour démarrer tous les services.
+
+Vous pouvez ensuite ouvrir votre navigateur web et accéder à l'URL correspondante :
+- XAMPP : `http://localhost/MYPROJECTPHP/index.php`
+- Laragon : `http://myprojectphp.test/index.php`
+
+## Utilisation
+Une fois l'application lancée, vous pouvez :
+
+- Ajouter de nouveaux packages et auteurs et version
+- Consulter et rechercher les packages et auteurs existants
+- Gérer les versions des packages et les contributions des auteurs
 
 ### 🔍 Fonctionnalités
 - Ajouter des packages

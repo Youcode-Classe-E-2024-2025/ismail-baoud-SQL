@@ -13,12 +13,15 @@
         footer {
             margin-top: auto;
         }
+        #navbar{
+            box-shadow: 0px 1px 10px 1px black;
+        }
     </style>
     </style>
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg bg-white sticky-top">
+<nav id="navbar" class="navbar navbar-expand-lg bg-white sticky-top">
         <a class="navbar-brand" href="#">PACKAGES PRO</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,7 +45,7 @@
         </div>
     </nav>
     <?php include "../../config/connection.php" ?>
-    <div class="row mt-5 ">
+    <div class="row mt-5 " >
         <div class="card mx-auto box" style="width: 18rem; opacity: 0;">
             <img class="card-img-top" src="../../../assets/images/1_iG1rHUl0C48LzRtfyVOXNg.jpg" alt="Card image cap">
             <div class="card-body">
