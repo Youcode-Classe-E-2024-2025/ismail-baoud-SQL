@@ -76,16 +76,16 @@ $conn->close();
                     <a class="nav-link p-0 me-3 " href="display_authors.php">All Authors</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link p-0 me-3" href="display_relations.php">Package / Author</a>
+                    <a class="nav-link p-0 me-3" href="display_relations.php">Package - Author</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link p-0 me-3" href="display_relation_versions.php">packages/versions</a>
+                    <a class="nav-link p-0 me-3" href="display_relation_versions.php">packages - versions</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link p-0 me-3" href="display_versions.php">versions</a>
                 </li>
                 <li class="nav-item w-auto">
-                    <a class="nav-link p-0 me-3 " href="add_form.php"> Add package / author</a>
+                    <a class="nav-link p-0 me-3 " href="add_form.php"> Add package - author</a>
                 </li>
 
             </ul>

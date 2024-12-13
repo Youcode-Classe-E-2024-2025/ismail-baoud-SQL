@@ -55,10 +55,10 @@ $conn->close();
                     <a class="nav-link link-underline p-0 me-3" href="home_user.php">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link p-0 me-3" href="#">Package / Author</a>
+                    <a class="nav-link p-0 me-3" href="#">Package - Author</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link p-0 me-3" href="display_relation_versions_user.php">packages/versions</a>
+                    <a class="nav-link p-0 me-3" href="display_relation_versions_user.php">packages - versions</a>
                 </li>
 
             </ul>

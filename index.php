@@ -1,13 +1,26 @@
 <?php 
-
+$rexName = "/^[a-zA-Z' -]+$/";
+$nameerr = "";
+$passworderr = "";
+$isvalide = true;
 if(isset($_POST["login"])){
     $user_name = $_POST["user_name"];
     $password = $_POST["password"];
-    if($user_name === "admin" && $password === "admin"){
-        header('location:home.php');
+    if (empty($user_name) or !preg_match($rexName, $user_name)) {
+        $nameerr = "please enter your user name !";
+        $isvalide = false;
     }
-    else{
-        header('location:./assets/php/user/home_user.php');
+    if (empty($password) or  strlen($password)< 8) {
+        $passworderr = "please enter your password ( +8 characters) !";
+        $isvalide = false;
+    }
+    if($isvalide){
+        if($user_name === "admin" && $password === "admin"){
+            header('location:home.php');
+        }
+        else{
+            header('location:./assets/php/user/home_user.php');
+        }
     }
 }
 ?>
@@ -31,7 +44,7 @@ if(isset($_POST["login"])){
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <span style="text-align:center; width:100%; font-size:1.5rem; font-weight:600;"><span style="color:red;">welcome</span> to owr <span style="color:blue;">web</span> <span style="color:green;">site</span></span>
+            <span style="text-align:center; width:100%; font-size:1.5rem; font-weight:600;"><span style="color:red;">welcome</span><span style="color:black;"> to owr</span> <span style="color:blue;">web</span> <span style="color:green;">site</span></span>
         </div>
     </nav>
 <div class="container text-center" style="display: grid; justify-content: center; align-items: center; height: 70vh;">
@@ -40,12 +53,13 @@ if(isset($_POST["login"])){
         <form action="#" method="post">
             <div class="input-field">
                 <label for="user_name" class="d-block">user name </label>
-                <input type="text" id="user_name" name="user_name" class="validate"
-                    placeholder="Enter user name">
+                <input type="text" id="user_name" name="user_name" class="validate" placeholder="Enter user name">
+                <span class="text-danger"><?php echo $nameerr; ?></span>
             </div>
             <div class="input-field">
                 <label for="password" class="d-block">password</label>
                 <input type="password" id="password" name="password" class="validate" placeholder="Enter password">
+                <span class="text-danger"><?php echo $passworderr; ?></span>
             </div>
 
             <input type="submit" name="login" value="Log in" class="btn">
