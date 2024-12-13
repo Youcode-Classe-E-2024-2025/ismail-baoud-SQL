@@ -47,7 +47,7 @@ $conn->close();
 </head>
 
 <body>
-    <?php include "add_all_data.php" ?>
+    <?php include "../controllers/add_all_data.php" ?>
     <nav class="navbar navbar-expand-lg bg-white sticky-top">
         <a class="navbar-brand" href="#">PACKAGES PRO</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -57,7 +57,7 @@ $conn->close();
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item ">
-                    <a class="nav-link link-underline p-0 me-3" href="../../home.php">Home</a>
+                    <a class="nav-link link-underline p-0 me-3" href="home.php">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link p-0 me-3" href="display_packages.php">All Packages</a>
@@ -81,7 +81,7 @@ $conn->close();
             </ul>
         </div>
     </nav>
-    <?php include "../../connection.php" ?>
+    <?php include "../config/connection.php" ?>
     <div class="container">
         <h4 class="center-align">author informations</h4>
         <form action="#" method="post">

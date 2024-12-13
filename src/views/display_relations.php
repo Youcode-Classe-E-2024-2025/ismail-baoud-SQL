@@ -52,7 +52,7 @@ $conn->close();
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item ">
-                    <a class="nav-link link-underline p-0 me-3" href="../../home.php">Home</a>
+                    <a class="nav-link link-underline p-0 me-3" href="home.php">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link p-0 me-3" href="display_packages.php">All Packages</a>
@@ -76,7 +76,7 @@ $conn->close();
             </ul>
         </div>
     </nav>
-    <?php include "../../connection.php" ?>
+    <?php include "../config/connection.php" ?>
     <table class="table table-striped text-center ">
 
         <tr>

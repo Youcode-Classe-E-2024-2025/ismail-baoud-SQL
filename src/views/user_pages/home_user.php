@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>my desaigne</title>
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
     <style>
 
         footer {
@@ -30,22 +30,10 @@
                     <a class="nav-link link-underline p-0 me-3" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link p-0 me-3" href="./assets/php/display_packages.php">All Packages</a>
+                    <a class="nav-link p-0 me-3" href="display_relations_user.php">Package - Author</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link p-0 me-3 " href="./assets/php/display_authors.php">All Authors</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link p-0 me-3" href="./assets/php/display_relations.php">Package / Author</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link p-0 me-3" href="./assets/php/display_relation_versions.php">packages/versions</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link p-0 me-3" href="./assets/php/display_versions.php">versions</a>
-                </li>
-                <li class="nav-item w-auto">
-                    <a class="nav-link p-0 me-3 " href="./assets/php/add_form.php"> Add package / author</a>
+                    <a class="nav-link p-0 me-3" href="display_relation_versions_user.php">packages - versions</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link p-0 me-3" href="../../../index.php">log out</a>
@@ -53,11 +41,10 @@
             </ul>
         </div>
     </nav>
-    <?php include "connection.php" ?>
-
+    <?php include "../../config/connection.php" ?>
     <div class="row mt-5 ">
         <div class="card mx-auto box" style="width: 18rem; opacity: 0;">
-            <img class="card-img-top" src="./assets/images/img.jpg" alt="Card image cap">
+            <img class="card-img-top" src="../../../assets/images/1_iG1rHUl0C48LzRtfyVOXNg.jpg" alt="Card image cap">
             <div class="card-body">
                 <p class="card-text">Gestion centralisée des packages</p>
             </div>
@@ -72,27 +59,25 @@
                 souhaitons rendre l'expérience de gestion des packages fluide, organisée et intuitive.</p>
         </div>
     </div>
-   
-    <div style="display:flex; margin-top:3rem;">
-    <div class="card">
+
+    <div class="card mb-3 mt-5">
         <div class="card-body">
             <h5 class="card-title">Suivi des auteurs et de leurs contributions</h5>
             <p class="card-text">Le projet vise à centraliser la gestion des packages JavaScript au sein d'une
                 plateforme unique et intuitive. Actuellement, les informations sur les packages sont dispersées.</p>
             <p class="card-text"><small class="text-muted">Last updated 3 days ago</small></p>
         </div>
-        <img class="card-img-top" src="./assets/images/Data-Thinking-1.png" alt="Card image cap">
+        <img class="card-img-top" src="../../../assets/images/Data-Thinking-1.png" alt="Card image cap">
 
     </div>
-    <div class="card">
+    <div class="card" mt-5>
         <div class="card-body">
             <h5 class="card-title">Facilité de recherche et de filtrage</h5>
             <p class="card-text">L'application offrira une fonctionnalité de recherche puissante permettant aux
                 utilisateurs de trouver facilement des packages en fonction de l'auteur ou de mots-clés.</p>
             <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
         </div>
-        <img class="card-img-bottom" src="./assets/images/image1.jpg" alt="Card image cap">
-    </div>
+        <img class="card-img-bottom" src="../../../assets/images/image1.jpg" alt="Card image cap">
     </div>
 
     <footer class="bg-dark text-white text-center py-3 mt-5">
@@ -110,6 +95,27 @@
         x: 100,
         rotation: 360,
         });
+
+// var tl = gsap.timeline(),
+//   mySplitText = new SplitText("#quote", { type: "words,chars" }),
+//   chars = mySplitText.chars; //an array of all the divs that wrap each character
+
+// gsap.set("#quote", { perspective: 400 });
+
+// console.log(chars);
+
+// tl.from(chars, {
+//   duration: 0.8,
+//   opacity: 0,
+//   scale: 0,
+//   y: 80,
+//   rotationX: 180,
+//   transformOrigin: "0% 50% -50",
+//   ease: "back",
+//   stagger: 0.01
+// });
+//   tl.restart();
+
     </script>
 </body>
 

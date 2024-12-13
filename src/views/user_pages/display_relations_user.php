@@ -64,7 +64,7 @@ $conn->close();
             </ul>
         </div>
     </nav>
-    <?php include "../../../connection.php" ?>
+    <?php include "../../config/connection.php" ?>
     <table class="table table-striped text-center ">
 
         <tr>

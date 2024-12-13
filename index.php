@@ -15,11 +15,11 @@ if(isset($_POST["login"])){
         $isvalide = false;
     }
     if($isvalide){
-        if($user_name === "admin" && $password === "admin"){
-            header('location:home.php');
+        if($user_name === "admin" && $password === "admin1234"){
+            header('location:./src/views/home.php');
         }
         else{
-            header('location:./assets/php/user/home_user.php');
+            header('location:./src/views/user_pages/home_user.php');
         }
     }
 }
