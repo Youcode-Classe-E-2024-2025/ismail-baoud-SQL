@@ -12,7 +12,7 @@ if (!$conn) {
 
 $query = null;
 $result = null;
-$query = "SELECT id, package_name, package_description, updated_at, author_id FROM packages";
+$query = "SELECT id, package_name, package_description, created_at, author_id FROM packages";
 $result = $conn->query($query);
 
 $conn->close();
@@ -48,7 +48,7 @@ $conn->close();
 
 <body>
     <?php include "add_all_data.php" ?>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg bg-white sticky-top">
         <a class="navbar-brand" href="#">PACKAGES PRO</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -56,26 +56,26 @@ $conn->close();
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item active">
-                    <a class="nav-link bg-secondary me-3 btn" href="../../index.php">Home</a>
+                <li class="nav-item ">
+                    <a class="nav-link link-underline p-0 me-3" href="../../home.php">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link bg-secondary me-3 btn" href="display_packages.php">All Packages</a>
+                    <a class="nav-link p-0 me-3" href="display_packages.php">All Packages</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link bg-secondary me-3 btn " href="display_authors.php">All Authors</a>
+                    <a class="nav-link p-0 me-3 " href="display_authors.php">All Authors</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link bg-secondary me-3 btn" href="display_relations.php">Package / Author</a>
+                    <a class="nav-link p-0 me-3" href="display_relations.php">Package / Author</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link bg-secondary btn me-3" href="display_relation_versions.php">packages/versions</a>
+                    <a class="nav-link p-0 me-3" href="display_relation_versions.php">packages/versions</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link bg-secondary btn me-3" href="display_versions.php">versions</a>
+                    <a class="nav-link p-0 me-3" href="display_versions.php">versions</a>
                 </li>
                 <li class="nav-item w-auto">
-                    <a class="nav-link  bg-success btn " href="add_form.php"> Add package / author</a>
+                    <a class="nav-link p-0 me-3 " href="add_form.php"> Add package / author</a>
                 </li>
 
             </ul>
@@ -84,7 +84,7 @@ $conn->close();
     <?php include "../../connection.php" ?>
     <div class="container">
         <h4 class="center-align">author informations</h4>
-        <form method="post">
+        <form action="#" method="post">
             <div class="input-field">
                 <label for="name">Full Name</label>
                 <input type="text" name="auteur" class="validate" placeholder="Enter your name">
@@ -101,7 +101,7 @@ $conn->close();
     </div>
     <div class="container">
         <h4 class="center-align">Package Information</h4>
-        <form method="post">
+        <form action="#" method="post">
             <div class="input-field">
                 <label for="packageName">Package Name</label>
                 <input type="text" id="packageName" name="package_name" class="validate"
@@ -131,7 +131,7 @@ $conn->close();
     </div>
     <div class="container">
         <h4 class="center-align">add new version package</h4>
-        <form method="post">
+        <form action="#" method="post">
             <div class="input-field">
                 <label for="name">package name</label>
                 <input type="text" name="name_package_for_version" class="validate" placeholder="Enter name of package">

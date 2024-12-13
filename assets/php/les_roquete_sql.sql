@@ -67,4 +67,4 @@ REFERENCES packages(id)
 ON DELETE CASCADE
 ON UPDATE CASCADE;
 
-/* */
+/**/

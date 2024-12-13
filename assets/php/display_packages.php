@@ -58,7 +58,7 @@ $conn->close();
     </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg bg-white sticky-top">
         <a class="navbar-brand" href="#">PACKAGES PRO</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -66,26 +66,26 @@ $conn->close();
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item active">
-                    <a class="nav-link bg-secondary btn me-3" href="../../index.php">Home</a>
+                <li class="nav-item ">
+                    <a class="nav-link link-underline p-0 me-3" href="../../home.php">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link bg-secondary btn me-3" href="display_packages.php">All Packages</a>
+                    <a class="nav-link p-0 me-3" href="display_packages.php">All Packages</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link bg-secondary btn me-3" href="display_authors.php">All Authors</a>
+                    <a class="nav-link p-0 me-3 " href="display_authors.php">All Authors</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link bg-secondary btn me-3" href="display_relations.php">Package / Author</a>
+                    <a class="nav-link p-0 me-3" href="display_relations.php">Package / Author</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link bg-secondary btn me-3" href="display_relation_versions.php">packages/versions</a>
+                    <a class="nav-link p-0 me-3" href="display_relation_versions.php">packages/versions</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link bg-secondary btn me-3" href="display_versions.php">versions</a>
+                    <a class="nav-link p-0 me-3" href="display_versions.php">versions</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link  bg-success btn" href="add_form.php"> Add package / author</a>
+                <li class="nav-item w-auto">
+                    <a class="nav-link p-0 me-3 " href="add_form.php"> Add package / author</a>
                 </li>
 
             </ul>
@@ -113,7 +113,7 @@ $conn->close();
                         <td>" . $row["created_at"] . "</td> 
                         <td>" . $row["author_id"] . "</td>
                          <td>
-                <form method='post'>
+                <form action='#' method='post'>
                     <input type='hidden' name='id' value='" . $row["id"] . "'>
                     <button type='submit' name='btn_spr' class='btn my-2 bg-danger'>supremer</button>
                 </form>

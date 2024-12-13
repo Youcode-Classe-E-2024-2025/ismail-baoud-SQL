@@ -97,7 +97,7 @@ if (empty($version_name) or !preg_match($rexName, $name_package_for_version)) {
     $version_nameerr = "please enter the version";
     $isvalide_version = false;
 }
-if (empty($version_date) or strtotime($updated_at) > time()) {
+if (empty($version_date) or strtotime($version_date) > time()) {
     $version_dateerr = "please enter valide date";
     $isvalide_version = false;
 }
@@ -106,7 +106,7 @@ $query_id = "SELECT id FROM packages WHERE package_name like '$name_package_for_
 $result_id = $conn->query($query_id);
 if ($row = $result_id->fetch_assoc()) {
     $id_ref = $row["id"];
-    $query_version = "INSERT INTO versions (package_id, version , release_data) VALUES ($id_ref,'$version_name', '$version_date')";
+    $query_version = "INSERT INTO versions (package_id, version , creation_date) VALUES ($id_ref,'$version_name', '$version_date')";
     $result_version = $conn->query($query_version);
 }else{
     echo "<script>alert('package is note defined! please add this package first !')</script>";
